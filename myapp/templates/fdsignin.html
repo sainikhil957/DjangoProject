@@ -1,0 +1,47 @@
+{% load static %}
+
+<html>
+<head>
+<title>fashion designer Signin</title>
+<link rel="stylesheet"  href="{% static 'css/fdsignin.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    
+</head>
+<body>
+	<div class="login-form">
+        <form action="{% url 'checkfdsignin' %}" method="POST">
+            {% csrf_token %}
+            <h2 style="font-weight: bold; color: #333">fashion designer Login</h2>
+            <div class="form-group">
+            <input
+                type="email"
+                class="form-control"
+                placeholder="Email"
+                required="required"
+                name="email"
+            />
+            <span id="span1"></span>
+            </div>
+        
+            <div class="form-group">
+            <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+                required="required"
+                name="password"
+            />
+            </div>
+        
+            <div class="form-group">
+                <button type="submit" class="btn btn-info btn-lg">Login</button>
+            </div>
+      </form>
+    </div>
+</body>
+</html>
+
+
+
+
